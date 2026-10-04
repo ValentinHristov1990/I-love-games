@@ -1,0 +1,238 @@
+
+#game-details {
+    margin: 20px auto;
+    position: relative;
+    width: 90vw;
+    max-width: 1200px;
+    height: auto;
+    border-radius: 15px;
+    padding: 2vw 4vw;
+    box-sizing: border-box;
+    text-align: center;
+    background: #2d2e2dc0; 
+    box-shadow: 0px 0px 24px 0px #32485e, -10px -10px 15px #191c21;
+    color: white; 
+}
+
+#game-details h1 {
+    font-size: 2.5vw;
+    margin-bottom: 2vw;
+    width: 100%;
+    color: white;
+}
+
+
+#game-details .info-section {
+    display: flex;
+    flex-wrap: wrap; 
+    text-align: left;
+}
+
+
+#game-details .header-and-image {
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#game-details .game-img {
+    width: 20vw;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #191c21, -5px -5px 10px #5e6865;
+    margin-bottom: 1.5vw;
+}
+
+
+.meta-info {
+    padding: 1vw;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    border-radius: 8px;
+    background: #32485e; /* По-тъмен фон за контраст */
+    box-shadow: inset 2px 2px 4px #2a3a48, inset -2px -2px 4px #425c75;
+}
+
+#game-details .game-name {
+    font-size: 1.8vw;
+    margin: 0 0 1vw 0;
+    text-align: center;
+}
+
+
+#game-details .data-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5vw 0;
+    font-size: 1.1vw;
+    border-bottom: 1px dashed #5e6865;
+}
+
+#game-details .data-row:last-of-type {
+    border-bottom: none;
+}
+
+#game-details .data-row .label {
+    font-weight: bold;
+    color: #86a480; /* Зелен акцент за етикета */
+}
+
+
+#game-details .summary-section {
+    width: 60%;
+    padding-left: 2vw;
+    box-sizing: border-box;
+}
+
+#game-details .summary-section h2 {
+    font-size: 1.5vw;
+    margin-top: 0;
+    color: white;
+    text-align: left;
+}
+
+#game-details .text-summary {
+    font-size: 1.2vw;
+    line-height: 1.6;
+}
+
+
+
+#game-details .details-comments {
+    width: 100%;
+    margin-top: 3vw;
+    text-align: left;
+    padding-top: 2vw;
+    border-top: 1px solid #5e6865;
+}
+
+#game-details .details-comments h2 {
+    font-size: 1.8vw;
+    margin-bottom: 1vw;
+    color: #86a480;
+    text-align: left;
+}
+
+#game-details .details-comments ul {
+    list-style: none;
+    padding: 0;
+}
+
+#game-details .comment {
+    background: #32485e;
+    padding: 1vw;
+    margin-bottom: 0.8vw;
+    border-radius: 8px;
+    box-shadow: inset 2px 2px 4px #2a3a48, inset -2px -2px 4px #425c75;
+}
+
+#game-details .create-comment {
+    width: 100%;
+    margin-top: 3vw;
+    padding-top: 2vw;
+   background: #32485e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#game-details .create-comment label {
+    display: block;
+    margin-bottom: 1.5vw; 
+    font-weight: bold;
+    font-size: 1.5vw;
+    color: white;
+}
+
+#game-details .create-comment .form {
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+#game-details .buttons {
+    width: 100%;
+    text-align: center;
+    margin-top: 3vw;
+    padding-top: 1.5vw;
+    border-top: 1px dashed #5e6865; 
+}
+
+#game-details .buttons .button {
+   
+    display: inline-block;
+    padding: 1vw 3vw; 
+    margin: 0 1.5vw;
+    font-size: 1.1vw;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    
+   
+    border-radius: 50px; 
+    box-shadow: 3px 3px 6px #191c21, -3px -3px 6px #5e6865;
+    transition: all 0.3s ease;
+}
+
+
+#game-details .buttons .button:nth-child(1) {
+    background: #86a480;
+}
+
+
+#game-details .buttons .button:nth-child(2) {
+    background: #943d44; 
+}
+
+
+#game-details .buttons .button:hover {
+    box-shadow: 1px 1px 3px #191c21, -1px -1px 3px #5e6865; 
+    background: #73946d; 
+}
+
+
+#game-details .buttons .button:nth-child(2):hover {
+    background: #7a0e0e;
+}
+
+#game-details .create-comment textarea {
+    width: 80%; 
+    min-height: 8vw;
+    border-radius: 10px; 
+    padding: 1.2vw;
+    font-size: 1vw; 
+    background-color: #ecf0f3;
+    color: black;
+    box-shadow: inset 2px 2px 3px #c0c2c5, inset -2px -2px 3px white;
+    box-sizing: border-box;
+    resize: vertical;
+    margin-bottom: 1.5vw; 
+}
+
+#game-details .create-comment .btn.submit {
+    width: 40%; 
+    padding: 1vw;
+    margin-top: 0;
+    font-size: 1.2vw;
+    background: #86a480; 
+    color: white;
+    border-radius: 40px;
+    box-shadow: 2px 2px 4px #191c21, -2px -2px 4px #5e6865;
+    transition: background-color 0.3s;
+}
+
+#game-details .create-comment .btn.submit:hover {
+    background: #73946d; 
+}

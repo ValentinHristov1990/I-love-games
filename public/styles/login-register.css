@@ -1,0 +1,128 @@
+#login-page {
+background-image: url(../images/logo.png);
+background-position: center;
+background-size: 440px;
+border-radius: 10px;
+background-color: #191c217a;
+width: 60vw;
+height: 70vh;
+margin-top: 5vh;
+font-family: "Agency FB";
+}
+
+#register-page {
+    background-image: url(../images/logo.png);
+background-position: center;
+background-size: 440px;
+border-radius: 10px;
+background-color: #191c217a;
+width: 60vw;
+height: 70vh;
+margin-top: 5vh;
+font-family: "Agency FB";
+}
+
+
+
+.container h1 {
+    margin-top: 15px;
+    font-weight: 900;
+    font-size: 50px;
+    text-align: center;
+    color: rgb(226, 156, 25);
+    letter-spacing: 1px;
+font-family: "Agency FB";
+    margin-bottom: 17px;
+background-color: #191c21;
+width: 30vw;
+border-radius: 30px;
+}
+
+label,
+input {
+    display: block;
+    width: 70%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+label {
+
+    font-size: 20px;
+    color: rgb(226, 156, 25);
+
+font-family: "Agency FB";
+background-color: #191c21;
+width: 30vw;
+font-weight: 900;
+border-radius: 30px;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input::placeholder {
+    color: rgba(184, 179, 179, 0.678);
+};
+
+
+label[for="female"] {
+    margin-top: 10px;
+}
+
+input[type="nickname"],
+input[type="password"],
+input[type="number"],
+input[type="email"] {
+    background: #ecf0f3;
+    padding: 10px;
+    padding-left: 20px;
+    height: 40px;
+    margin-top: 10px;
+    font-size: 24px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
+}
+
+label[for="terms"]>input {
+    display: inline;
+}
+
+.btn.submit {
+    margin-top: 30px;
+    background: #778e9c;
+    height: 60px;
+    border-radius: 20px;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+}
+
+.btn.submit:hover {
+    color: white;
+    background-color: #8fa9b9;
+}
+
+.container {
+    text-align: left;
+    margin-top: 0px;
+}
+
+.field>span {
+    position: absolute;
+    font-size: 18px;
+    bottom: 17px;
+    right: 8px;
+    text-decoration: none;
+    color: black;
+    background: rgb(235, 157, 142);
+    border-radius: 10px;
+    padding: 5px;
+}

@@ -1,0 +1,100 @@
+body {
+    background-image: url('../images/bg.jpg');
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative; 
+    min-height: 100vh; 
+    margin: 0; 
+    padding-bottom: 40px; 
+}
+
+
+
+footer .center-text {
+    font-size: 0.9em;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 10px 0;
+    background-color: #333; 
+    color: white; 
+    text-align: center;
+}
+
+footer .center-text {
+    font-size: 0.9em;
+}
+
+.home  img{
+height: 9vh;
+margin-right: 20vw;
+}
+
+header {
+ background-color: rgba(0, 0, 0, 0.829);
+ color: white;
+ width: 60vw;
+ padding: 0px 20px;
+ border-bottom-left-radius: 20px;
+ border-bottom-right-radius: 20px;
+font-family: "Agency FB";
+font-size: 22px;
+}
+
+header h1 {
+    display: inline-block;
+    background-color: #29303c;
+    color: white;
+    margin-bottom: auto;
+}
+
+header nav {
+ display: flex;
+ align-items: center;
+ justify-content: start;
+}
+
+header nav>* {
+    float: left;
+}
+
+footer {
+    padding: 0.5em;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+nav a {
+    margin: 0 0.5em;
+}
+
+nav a:hover {
+    cursor: pointer;
+    color: rgb(82, 133, 139);
+    font-weight: bolder;
+}
+
+.home:hover {
+    color: rgb(82, 133, 139);
+}
+
+#user,
+#guest {
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,204 @@
+.home-container {
+    width: 55vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo-left{
+    height: 30vh;
+}
+
+.game {
+    width: 20vw;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    -webkit-box-reflect: below 5px linear-gradient(transparent, transparent, rgba(219, 173, 173, 0.308));
+    transform-origin: center;
+    transform: perspective(800px) rotateY(28deg);
+    transition: 0.5s;
+}
+
+.game img {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: none;
+    -webkit-box-reflect: none;
+    display: block;
+    transition: opacity 0.5s;
+    border: 5px solid black;
+}
+
+
+.details-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+    box-sizing: border-box;
+    font-size: 26px;
+    font-family: "Agency FB";
+    border: 5px solid black;
+}
+
+.details-button {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    margin-top: 5px;
+    padding: 10px;
+    font-family: "Agency FB";
+    font-size: 18px;
+}
+
+.details-button:hover {
+    background-color: #4e8339;
+}
+
+
+.game:hover {
+    transform: perspective(900px) rotateY(0deg);
+    opacity: 1;
+}
+
+.game:hover img {
+    opacity: 0.5;
+}
+
+.game:hover .details-overlay {
+    opacity: 1;
+    margin-left: -4px;
+}
+
+
+#welcome-world {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#welcome-world .welcome-message {
+    display: inline-block;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    top: 40%;
+    text-align: center;
+    width: 30%
+}
+
+#welcome-world>img {
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 60%;
+    margin-left: auto;
+    padding-left: auto;
+}
+
+.welcome-message h2 {
+    color: #ffffff;
+    font-size: 300%;
+    font-size: 55px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3);
+    font-family: "Agency FB";
+}
+
+.welcome-message h3 {
+    color: #ffffff;
+    font-size: 600%;
+    text-shadow: none;
+    line-height: 1;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3);
+    font-family: "Agency FB";
+}
+
+
+
+#home-page {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15vh;
+    background-color: #05050579;
+    border-radius: 20px;
+}
+
+#latest-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+}
+
+
+
+.image-wrap>img {
+    width: 10vw;
+    height: 20vh;
+    border-radius: 10px;
+}
+
+.details-btn {
+    background-color: #fd5454;
+    font-size: 1.4rem;
+    padding-top: 20px;
+    margin-top: 10px;
+    color: white;
+    padding: 0.9em 1.4em;
+}
+
+.data-buttons {
+    font-size: 1.4rem;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.btn.details-btn:hover {
+    background-color: rgb(192, 129, 117);
+    color: white;
+}
+
+#home-page>h1 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: 700;
+    font-size: 34px;
+    font-family: "Agency FB";
+}
+
+.no-articles {
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 60px;
+    font-family: "Agency FB";
+}

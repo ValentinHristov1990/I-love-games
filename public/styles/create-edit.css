@@ -1,0 +1,151 @@
+#add-page, #edit-page {
+    margin-top: 20px;
+    position: relative;
+    width: 90vw;
+    height: auto;
+    border-radius: 15px;
+    padding: 0.6vw;
+    box-sizing: border-box;
+    text-align: center;
+    background: #2d2e2ecb;
+    box-shadow: 0px 0px 24px 0px #32485e, -10px -10px 15px #191c21;
+}
+
+#add-page .container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    text-align: left;
+}
+
+#edit-page .container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    text-align: left;
+}
+
+.form-group-half {
+    width: 40%; 
+    margin-bottom: 0.6vw;
+}
+
+.form-group-full {
+    width: 100%;
+    margin-bottom: 0.6vw;
+}
+
+#add-page input[type="text"],
+#add-page input[type="number"],
+#add-page input[type="date"] {
+    width: 100%; 
+    background: #ecf0f3;
+    padding: 0.6vw 0.9vw;
+    height: 24px;
+    margin-top: 0.3vw;
+    font-size: 0.72vw;
+    border: none;
+    border-radius: 40px;
+    box-shadow: inset 2px 2px 3px #c0c2c5, inset -2px -2px 3px white;
+    box-sizing: border-box; 
+}
+
+#add-page textarea {
+    width: 100%;
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.9vw;
+    font-size: 0.72vw;
+    background-color: #ecf0f3;
+    margin-top: 0.3vw;
+    color: black;
+    box-shadow: inset 2px 2px 3px #c0c2c5, inset -2px -2px 3px white;
+    box-sizing: border-box;
+}
+
+#add-page label {
+    display: block;
+    margin-bottom: 0.3vw;
+    font-weight: bold;
+    font-size: 1.3vw;
+    color: white; 
+}
+
+#add-page h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.2vw;
+    font-size: 1.5vw;
+    color: white;
+}
+
+#add-page .btn.submit {
+    width: 100%;
+    padding: 0.9vw;
+    margin-top: 1.2vw;
+    font-size: 0.9vw;
+    cursor: pointer;
+    background: #86a480; 
+    color: white;
+    border: none;
+    border-radius: 40px;
+    box-shadow: 2px 2px 4px #191c21, -2px -2px 4px #5e6865;
+}
+
+
+#edit-page input[type="text"],
+#edit-page input[type="number"],
+#edit-page input[type="date"] {
+    width: 100%; 
+    background: #ecf0f3;
+    padding: 0.6vw 0.9vw;
+    height: 24px;
+    margin-top: 0.3vw;
+    font-size: 0.72vw;
+    border: none;
+    border-radius: 40px;
+    box-shadow: inset 2px 2px 3px #c0c2c5, inset -2px -2px 3px white;
+    box-sizing: border-box; 
+}
+
+#edit-page textarea {
+    width: 100%;
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.9vw;
+    font-size: 0.72vw;
+    background-color: #ecf0f3;
+    margin-top: 0.3vw;
+    color: black;
+    box-shadow: inset 2px 2px 3px #c0c2c5, inset -2px -2px 3px white;
+    box-sizing: border-box;
+}
+
+#edit-page label {
+    display: block;
+    margin-bottom: 0.3vw;
+    font-weight: bold;
+    font-size: 1.3vw;
+    color: white; 
+}
+
+#edit-page h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.2vw;
+    font-size: 1.5vw;
+    color: white;
+}
+
+#edit-page .btn.submit {
+    width: 100%;
+    padding: 0.9vw;
+    margin-top: 1.2vw;
+    font-size: 0.9vw;
+    cursor: pointer;
+    background: #86a480; 
+    color: white;
+    border: none;
+    border-radius: 40px;
+    box-shadow: 2px 2px 4px #191c21, -2px -2px 4px #5e6865;
+}
