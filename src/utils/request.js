@@ -18,8 +18,13 @@ export default async function request(path = "/", method = "GET", data = null) {
   }
 
   const response = await fetch(`${url}${path}`, options);
+
   if (!response) {
     throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+
+  if (response.status === 204) {
+    return null;
   }
 
   return response.json();
