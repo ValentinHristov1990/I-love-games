@@ -7,9 +7,15 @@ export default function Home() {
     const [games, setGames] = useState([]);
 
     useEffect(() => {
-        request("/games?order=created_at.desc&limit=3")
+        const abortController = new AbortController();
+
+        request("/games?order=created_at.desc&limit=3", "GET", null, { signal: abortController.signal })
             .then(setGames)
             .catch(err => alert(err));
+
+        return () => {
+            abortController.abort();
+        }
     }, [])
 
     return (
