@@ -1,3 +1,4 @@
+import { Route, Routes } from "react-router"
 import Catalog from "./components/catalog/Catalog"
 import Create from "./components/create/Create"
 import Details from "./components/details/Details"
@@ -13,14 +14,18 @@ function App() {
     return (
         <>
             <Header />
-            <Home />
-            <Catalog />
+
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/catalog" element={<Catalog />} />
+                <Route path="/edit" element={<Edit />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/details" element={<Details />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/create" element={<Create />} />
+            </Routes>
+
             <Footer />
-            <Edit />
-            <Details />
-            <Login />
-            <Register />
-            <Create />
 
         </>
     )
