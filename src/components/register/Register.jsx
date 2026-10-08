@@ -1,14 +1,13 @@
-import { useState } from "react";
+
 import { useNavigate } from "react-router";
 
-export default function Register() {
-    const [user, setUser] = useState(null);
+export default function Register({
+    onRegister,
+}) {
+
     const navigate = useNavigate();
 
-    const registerHandler = ((e) => {
-        e.preventDefault();
-
-        const formData = new FormData(e.target);
+    const registerActionHandler = ((formData) => {
 
         const email = formData.get("email");
         const password = formData.get("password");
@@ -24,15 +23,15 @@ export default function Register() {
             return;
         }
 
-        setUser({ email });
+        onRegister({ email });
         navigate("/")
     })
     return (
         <>
-            {user && <p>Welcome, {user.email}</p>}
+
             {/* // <!-- Register Page ( Only for Guest users ) --> */}
             <section id="register-page" className="content auth">
-                <form id="register" onSubmit={registerHandler}>
+                <form id="register" action={registerActionHandler}>
                     <div className="container">
                         <div className="brand-logo"></div>
                         <h1>Register</h1>
