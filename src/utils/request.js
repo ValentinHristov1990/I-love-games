@@ -9,6 +9,7 @@ export default async function request(
   const options = {
     headers: {
       apikey: import.meta.env.VITE_API_KEY,
+      Prefer: "return=representation",
     },
     ...opts,
   };
@@ -28,9 +29,9 @@ export default async function request(
     throw new Error(`HTTP error! Status: ${response.status}`);
   }
 
-  if ([201, 204].includes(response.status)) {
-    return null;
-  }
+  // if ([201, 204].includes(response.status)) {
+  //   return null;
+  // }
 
   return response.json();
 }
