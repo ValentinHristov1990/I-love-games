@@ -1,4 +1,4 @@
-const url = "https://udwutsukejsldmwvcpik.supabase.co/rest/v1/";
+const url = "https://udwutsukejsldmwvcpik.supabase.co/rest/v1";
 
 export default async function request(
   path = "/",

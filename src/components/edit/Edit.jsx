@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import request from "../../utils/request";
 
 const initialValues = {
@@ -15,14 +15,20 @@ export default function Edit() {
 
     const { gameId } = useParams();
     const [game, setGame] = useState(initialValues);
+    const navigate = useNavigate();
 
     useEffect(() => {
         request(`/games?id=eq.${gameId}`)
             .then(data => setGame(data[0]))
     }, [gameId]);
 
+    const editAction = async () => {
+        await request(`/games?id=eq.${gameId}`, "PUT", game)
+        navigate(`/games/${gameId}`);
+    }
+
     const changeHandler = (e) => {
-        setValues(state => ({
+        setGame(state => ({
             ...state,
             [e.target.name]: e.target.value
         }))
@@ -30,7 +36,7 @@ export default function Edit() {
 
     return (
         <section id="edit-page">
-            <form id="add-new-game">
+            <form id="add-new-game" action={editAction}>
                 <div className="container">
 
                     <h1>Edit Game</h1>
@@ -40,7 +46,7 @@ export default function Edit() {
                         <input
                             type="text"
                             id="gameName"
-                            name="gameName"
+                            name="title"
                             placeholder="Enter game title..."
                             value={game.title}
                             onChange={changeHandler} />
