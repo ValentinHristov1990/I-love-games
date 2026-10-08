@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router"
+import { Route, Routes, useNavigate } from "react-router"
 import { useState } from "react";
 import Catalog from "./components/catalog/Catalog"
 import Create from "./components/create/Create"
@@ -9,13 +9,19 @@ import Header from "./components/header/Header"
 import Home from "./components/home/Home"
 import Login from "./components/login/Login"
 import Register from "./components/register/Register"
+import Logout from "./components/logout/Logout";
 
 function App() {
     const [user, setUser] = useState(null);
+    const navigate = useNavigate()
 
     const UserHandler = (userData) => {
         setUser(userData);
     }
+
+    const logoutAction = (userData) => {
+        setUser(null);
+    };
 
     return (
         <>
@@ -29,6 +35,7 @@ function App() {
                 <Route path="/games/:gameId" element={<Details />} />
                 <Route path="/login" element={<Login onLogin={UserHandler} />} />
                 <Route path="/create" element={<Create />} />
+                <Route path="/logout" element={<Logout onLogout={logoutAction} />} />
             </Routes>
 
             <Footer />
