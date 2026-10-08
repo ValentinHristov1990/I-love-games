@@ -13,7 +13,7 @@ import Register from "./components/register/Register"
 function App() {
     const [user, setUser] = useState(null);
 
-    const registerUserHandler = (userData) => {
+    const UserHandler = (userData) => {
         setUser(userData);
     }
 
@@ -25,9 +25,9 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/catalog" element={<Catalog />} />
                 <Route path="/edit" element={<Edit />} />
-                <Route path="/register" element={<Register onRegister={registerUserHandler} />} />
+                <Route path="/register" element={<Register onRegister={UserHandler} />} />
                 <Route path="/games/:gameId" element={<Details />} />
-                <Route path="/login" element={<Login />} />
+                <Route path="/login" element={<Login onLogin={UserHandler} />} />
                 <Route path="/create" element={<Create />} />
             </Routes>
 
