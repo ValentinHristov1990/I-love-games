@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 
 export default function Header({
-    user,
+    isAuthenticated,
 }) {
     return (
         <header>
@@ -11,7 +11,7 @@ export default function Header({
                 <Link to="/catalog">Catalog</Link>
 
                 {
-                    user ?
+                    isAuthenticated ?
                         <div id="user">
                             <Link to="/create">Add Game</Link>
                             <Link to="/logout">Logout</Link>
