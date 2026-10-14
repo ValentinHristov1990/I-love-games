@@ -9,11 +9,12 @@ async function baseRequest(
   opts = {},
 ) {
   const options = {
+    ...opts,
     headers: {
+      ...opts.headers,
       apikey: import.meta.env.VITE_API_KEY,
       Prefer: "return=representation",
     },
-    ...opts,
   };
 
   if (method !== "GET") {
