@@ -19,6 +19,18 @@ function App() {
     const register = async (userData) => {
         try {
             const data = await authApi.register(userData);
+
+            setAuth(data);
+            navigate("/");
+        } catch (error) {
+            alert(error.message);
+        }
+    }
+
+    const login = async (userData) => {
+        try {
+            const data = await authApi.login(userData);
+
             setAuth(data);
             navigate("/");
         } catch (error) {
@@ -40,7 +52,7 @@ function App() {
                 <Route path="/games/:gameId/edit" element={<Edit />} />
                 <Route path="/register" element={<Register onRegister={register} />} />
                 <Route path="/games/:gameId" element={<Details user={auth?.user} />} />
-                <Route path="/login" element={<Login onLogin={register} />} />
+                <Route path="/login" element={<Login onLogin={login} />} />
                 <Route path="/create" element={<Create />} />
                 <Route path="/logout" element={<Logout onLogout={logoutAction} />} />
             </Routes>
