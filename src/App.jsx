@@ -11,6 +11,7 @@ import Login from "./components/login/Login"
 import Register from "./components/register/Register"
 import Logout from "./components/logout/Logout";
 import { register } from "./api/authApi";
+import { authApi } from "./api";
 
 function App() {
     const [auth, setAuth] = useState(null);
@@ -18,7 +19,7 @@ function App() {
 
     const userAuthHandler = async (userData) => {
         try {
-            const data = await register(userData);
+            const data = await authApi.register(userData);
             setAuth(data);
         } catch (error) {
             alert(error.message);
