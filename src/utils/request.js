@@ -1,6 +1,8 @@
-const url = "https://udwutsukejsldmwvcpik.supabase.co/rest/v1";
+const restUrl = "https://udwutsukejsldmwvcpik.supabase.co/rest/v1";
+const authUrl = "https://udwutsukejsldmwvcpik.supabase.co/auth/v1";
 
-export default async function request(
+async function baseRequest(
+  url,
   path = "/",
   method = "GET",
   data = null,
@@ -25,7 +27,7 @@ export default async function request(
 
   const response = await fetch(`${url}${path}`, options);
 
-  if (!response) {
+  if (!response.ok) {
     throw new Error(`HTTP error! Status: ${response.status}`);
   }
 
@@ -35,3 +37,24 @@ export default async function request(
 
   return response.json();
 }
+
+// export default async function request(
+//   path = "/",
+//   method = "GET",
+//   data = null,
+//   opts = {},
+// ) {
+// return baseRequest(restUrl, path, method, data, opts);
+// }
+export default baseRequest.bind(null, restUrl);
+
+// export const authRequest = async (
+//   path = "/",
+//   method = "GET",
+//   data = null,
+//   opts = {},
+// ) {
+// return baseRequest(authUrl, path, method, data, opts);
+// }
+
+export const authRequest = baseRequest.bind(null, authUrl);

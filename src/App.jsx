@@ -10,30 +10,36 @@ import Home from "./components/home/Home"
 import Login from "./components/login/Login"
 import Register from "./components/register/Register"
 import Logout from "./components/logout/Logout";
+import { register } from "./api/authApi";
 
 function App() {
-    const [user, setUser] = useState(null);
+    const [auth, setAuth] = useState(null);
     const navigate = useNavigate()
 
-    const UserHandler = (userData) => {
-        setUser(userData);
+    const userAuthHandler = async (userData) => {
+        try {
+            const data = await register(userData);
+            setAuth(data);
+        } catch (error) {
+            alert(error.message);
+        }
     }
 
-    const logoutAction = (userData) => {
-        setUser(null);
+    const logoutAction = () => {
+        setAuth(null);
     };
 
     return (
         <>
-            <Header isAuthenticated={!!user} />
-            {user && <p>Welcome, {user.email}</p>}
+            <Header isAuthenticated={!!auth} />
+            {auth && <p>Welcome, {auth.email}</p>}
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/catalog" element={<Catalog />} />
                 <Route path="/games/:gameId/edit" element={<Edit />} />
-                <Route path="/register" element={<Register onRegister={UserHandler} />} />
-                <Route path="/games/:gameId" element={<Details user={user} />} />
-                <Route path="/login" element={<Login onLogin={UserHandler} />} />
+                <Route path="/register" element={<Register onRegister={userAuthHandler} />} />
+                <Route path="/games/:gameId" element={<Details user={auth} />} />
+                <Route path="/login" element={<Login onLogin={userAuthHandler} />} />
                 <Route path="/create" element={<Create />} />
                 <Route path="/logout" element={<Logout onLogout={logoutAction} />} />
             </Routes>
