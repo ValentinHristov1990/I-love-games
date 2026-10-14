@@ -11,6 +11,7 @@ import Login from "./components/login/Login"
 import Register from "./components/register/Register"
 import Logout from "./components/logout/Logout";
 import { authApi } from "./api";
+import AuthContext from "./contexts/authContext";
 
 function App() {
     const [auth, setAuth] = useState(null);
@@ -42,8 +43,16 @@ function App() {
         setAuth(null);
     };
 
+    const contextValue = {
+        accessToken: auth?.access_token,
+        user: auth?.user,
+        isAuthenticated: !!auth,
+        register,
+        login,
+    }
+
     return (
-        <>
+        <AuthContext.Provider value={contextValue}>
             <Header isAuthenticated={!!auth} />
             {auth && <p>Welcome, {auth.email}</p>}
             <Routes>
@@ -59,7 +68,7 @@ function App() {
 
             <Footer />
 
-        </>
+        </AuthContext.Provider>
     )
 }
 
