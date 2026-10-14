@@ -1,13 +1,8 @@
-
-import { useNavigate } from "react-router";
-
 export default function Register({
     onRegister,
 }) {
 
-    const navigate = useNavigate();
-
-    const registerActionHandler = ((formData) => {
+    const registerActionHandler = (formData) => {
 
         const email = formData.get("email");
         const password = formData.get("password");
@@ -24,8 +19,7 @@ export default function Register({
         }
 
         onRegister({ email, password });
-        navigate("/")
-    })
+    }
     return (
         <>
 

@@ -10,17 +10,17 @@ import Home from "./components/home/Home"
 import Login from "./components/login/Login"
 import Register from "./components/register/Register"
 import Logout from "./components/logout/Logout";
-import { register } from "./api/authApi";
 import { authApi } from "./api";
 
 function App() {
     const [auth, setAuth] = useState(null);
     const navigate = useNavigate()
 
-    const userAuthHandler = async (userData) => {
+    const register = async (userData) => {
         try {
             const data = await authApi.register(userData);
             setAuth(data);
+            navigate("/");
         } catch (error) {
             alert(error.message);
         }
@@ -38,9 +38,9 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/catalog" element={<Catalog />} />
                 <Route path="/games/:gameId/edit" element={<Edit />} />
-                <Route path="/register" element={<Register onRegister={userAuthHandler} />} />
-                <Route path="/games/:gameId" element={<Details user={auth} />} />
-                <Route path="/login" element={<Login onLogin={userAuthHandler} />} />
+                <Route path="/register" element={<Register onRegister={register} />} />
+                <Route path="/games/:gameId" element={<Details user={auth?.user} />} />
+                <Route path="/login" element={<Login onLogin={register} />} />
                 <Route path="/create" element={<Create />} />
                 <Route path="/logout" element={<Logout onLogout={logoutAction} />} />
             </Routes>
