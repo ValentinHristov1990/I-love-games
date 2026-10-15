@@ -1,7 +1,8 @@
-import request from "../../utils/request";
+import { commentApi } from "../../api";
 
 export default function CreateComment({
     user,
+    accessToken,
     gameId,
     onCreate,
 }) {
@@ -11,9 +12,10 @@ export default function CreateComment({
             text: formData.get("text"),
             author: user?.email,
             game_id: gameId,
+            user_id: user?.id
         }
         try {
-            await request("/comments", "POST", newComment);
+            await commentApi.create(newComment, accessToken);
             onCreate();
         } catch (error) {
             alert(error.message);

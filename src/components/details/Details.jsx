@@ -7,7 +7,7 @@ import AuthContext from "../../contexts/authContext";
 import { gameApi } from "../../api";
 
 export default function Details() {
-    const { user, accessToken } = useContext(AuthContext);
+    const { user, accessToken, isAuthenticated } = useContext(AuthContext);
     const { gameId } = useParams();
     const [game, setGame] = useState({});
     const navigate = useNavigate();
@@ -85,7 +85,7 @@ export default function Details() {
             </div>
             {/* <!-- Add Comment ( Only for logged-in users, which is not creators of the current game ) --> */}
 
-            {user && <CreateComment user={user} gameId={gameId} onCreate={() => setRefresh(state => !state)} />}
+            {isAuthenticated && !isOwner && <CreateComment user={user} gameId={gameId} accessToken={accessToken} onCreate={() => setRefresh(state => !state)} />}
 
         </section>
     );
