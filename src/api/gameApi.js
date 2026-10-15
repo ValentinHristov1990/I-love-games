@@ -16,6 +16,14 @@ export const create = (data, accessToken) => {
   });
 };
 
+export const remove = async (gameId, accessToken) => {
+  return request(`/games?id=eq.${gameId}`, "DELETE", "null", {
+    headers: {
+      ...getAuthHeader(accessToken),
+    },
+  });
+};
+
 function getAuthHeader(accessToken) {
   return {
     ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
