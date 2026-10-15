@@ -32,9 +32,9 @@ async function baseRequest(
     throw new Error(`HTTP error! Status: ${response.status}`);
   }
 
-  // if ([201, 204].includes(response.status)) {
-  //   return null;
-  // }
+  if (response.status === 204) {
+    return null;
+  }
 
   return response.json();
 }

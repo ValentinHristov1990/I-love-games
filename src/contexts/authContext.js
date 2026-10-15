@@ -6,6 +6,7 @@ const AuthContext = createContext({
   isAuthenticated: false,
   register() {},
   login() {},
+  logout() {},
 });
 
 export default AuthContext;
