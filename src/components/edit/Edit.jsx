@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import request from "../../utils/request";
+import { gameApi } from "../../api";
+import AuthContext from "../../contexts/authContext";
 
 const initialValues = {
     title: '',
@@ -12,7 +14,7 @@ const initialValues = {
 }
 
 export default function Edit() {
-
+    const { accessToken } = useContext(AuthContext);
     const { gameId } = useParams();
     const [game, setGame] = useState(initialValues);
     const navigate = useNavigate();
@@ -23,8 +25,14 @@ export default function Edit() {
     }, [gameId]);
 
     const editAction = async () => {
-        await request(`/games?id=eq.${gameId}`, "PUT", game)
-        navigate(`/games/${gameId}`);
+
+        try {
+
+            await gameApi.update(gameId, game, accessToken);
+            navigate(`/games/${gameId}`);
+        } catch (error) {
+            alert(error.message);
+        }
     }
 
     const changeHandler = (e) => {
